@@ -1,0 +1,25 @@
+From 677fa761cb05d150d7a63db4191898416be05df2 Mon Sep 17 00:00:00 2001
+From: Balint Reczey <balint.reczey@canonical.com>
+Date: Mon, 27 Aug 2018 22:47:02 +0200
+Subject: [PATCH] Fix map_spec.rb test on armhf
+
+---
+ spec/concurrent/map_spec.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/spec/concurrent/map_spec.rb b/spec/concurrent/map_spec.rb
+index c9aebfb9..fd0355dd 100644
+--- a/spec/concurrent/map_spec.rb
++++ b/spec/concurrent/map_spec.rb
+@@ -799,7 +799,7 @@ module Concurrent
+     end
+ 
+     it '#inspect' do
+-      regexp = /\A#<Concurrent::Map:0x[0-9a-f]+ entries=[0-9]+ default_proc=.*>\Z/i
++      regexp = /\A#<Concurrent::Map:0x[-0-9a-f]+ entries=[0-9]+ default_proc=.*>\Z/i
+       expect(Concurrent::Map.new.inspect).to match(regexp)
+       expect((Concurrent::Map.new {}).inspect).to match(regexp)
+       map = Concurrent::Map.new
+-- 
+2.17.1
+

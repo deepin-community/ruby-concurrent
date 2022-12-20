@@ -1,0 +1,12 @@
+To make sure latest version is used during build
+
+--- a/spec/spec_helper.rb
++++ b/spec/spec_helper.rb
+@@ -33,6 +33,7 @@
+   end
+ end
+ 
++$:.unshift File.expand_path('../../lib/concurrent-ruby', __FILE__)
+ require 'concurrent'
+ $:.unshift File.expand_path('../../lib/concurrent-ruby-edge', __FILE__)
+ require 'concurrent-edge'

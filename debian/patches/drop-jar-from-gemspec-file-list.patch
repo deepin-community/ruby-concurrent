@@ -1,0 +1,12 @@
+This file is not present in source
+
+--- a/concurrent-ruby.gemspec
++++ b/concurrent-ruby.gemspec
+@@ -17,7 +17,6 @@
+                         *Dir['ext/concurrent-ruby/**/*'] & git_files,
+                         'Rakefile',
+                         'Gemfile',
+-                        'lib/concurrent-ruby/concurrent/concurrent_ruby.jar'
+   ]
+   s.extra_rdoc_files = Dir['README*', 'LICENSE*', 'CHANGELOG*']
+   s.require_paths    = ['lib/concurrent-ruby']

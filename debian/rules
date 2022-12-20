@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+#export GEM2DEB_TEST_RUNNER = --check-dependencies
+export DH_RUBY = --gem-install
+export DH_RUBY_USE_DH_AUTO_INSTALL_DESTDIR=debian/ruby-concurrent-ext
+
+%:
+	DH_RUBY_GEMSPEC=concurrent-ruby.gemspec dh $@ --buildsystem=ruby --with ruby --package=ruby-concurrent
+	DH_RUBY_GEMSPEC=concurrent-ruby-ext.gemspec dh $@ --buildsystem=ruby --with ruby --package=ruby-concurrent-ext
+
+override_dh_install:
+	DH_RUBY_GEMSPEC=concurrent-ruby.gemspec dh_install -O--buildsystem=ruby -O--package=ruby-concurrent
+	DH_RUBY_GEMSPEC=concurrent-ruby-ext.gemspec dh_install -O--buildsystem=ruby -O--package=ruby-concurrent-ext
+	debian/copy-gemspec.sh

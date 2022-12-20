@@ -1,0 +1,6 @@
+0001-Fix-map_spec.rb-test-on-armhf.patch
+remove-git.patch
+disable-failing-tests.patch
+drop-jar-from-gemspec-file-list.patch
+concurrent-edge.patch
+use-local-concurrent.patch

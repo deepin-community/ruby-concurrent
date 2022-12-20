@@ -1,0 +1,42 @@
+Source: ruby-concurrent
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Balasankar C <balasankarc@autistici.org>,
+ Pirate Praveen <praveen@debian.org>
+Build-Depends: debhelper-compat (= 12),
+               gem2deb,
+               rake,
+               rake-compiler,
+               ruby-rspec,
+               ruby-timecop
+Standards-Version: 4.5.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-concurrent.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-concurrent
+Homepage: http://www.concurrent-ruby.com
+XS-Ruby-Versions: all
+
+Package: ruby-concurrent
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Provides: ruby-concurrent-edge (=${source:Version})
+Description: modern concurrency tools for Ruby
+ This package provides modern concurrency tools including agents, futures,
+ promises, thread pools, actors, supervisors, and more. Inspired by Erlang,
+ Clojure, Go, JavaScript, actors, and classic concurrency patterns.
+ .
+ This package also includes edge features and additions to the concurrent-ruby.
+
+Package: ruby-concurrent-ext
+Architecture: any
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ruby | ruby-interpreter,
+         ruby-concurrent (=${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: C extensions to optimize concurrent-ruby under MRI
+ concurrent-ruby provides modern concurrency tools including agents, futures,
+ promises, thread pools, actors, supervisors, and more. Inspired by Erlang,
+ Clojure, Go, JavaScript, actors, and classic concurrency patterns.

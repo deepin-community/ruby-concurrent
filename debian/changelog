@@ -1,0 +1,103 @@
+ruby-concurrent (1.1.6+dfsg-deepin1) unstable; urgency=medium
+
+  * Rebuild
+
+ -- Deepin Packages Builder <packages@deepin.org>  Fri, 11 Nov 2022 18:04:22 +0800
+
+ruby-concurrent (1.1.6+dfsg-3) unstable; urgency=medium
+
+  * Tighten dependency on ruby-concurrent to same version as source
+  * Fix version of concurrent-ruby-edge gem (not same as concurrent-ruby)
+  * Run dh_install for both binary packages in override target
+  * Remove git from concurrent-ruby-edge gemspec as well (fixes broken gempsec)
+  * Add myself to uploaders
+  * Check gemspec dependencies for all gemspec
+
+ -- Pirate Praveen <praveen@debian.org>  Fri, 28 Feb 2020 14:16:50 +0530
+
+ruby-concurrent (1.1.6+dfsg-2) unstable; urgency=medium
+
+  * Cleanup after tests are run (remove spec/examples.txt)
+  * Use local files during build (add local path to LOAD_PATH for tests)
+  * Build 2 binary packages (ruby-concurrent and ruby-concurrent-ext)
+  * Run tests only as autopkgtest (as ruby-concurrent-ext needs
+    ruby-concurrent for tests)
+  * Add DH_RUBY_USE_DH_AUTO_INSTALL_DESTDIR=debian/ruby-concurrent-ext
+  * Install the files for ruby-concurrent-ext
+  * Manually install files for ruby-concurrent using .install file
+  * Manually add and clean concurrent-ruby.gemspec
+  * Add concurrent-ruby-edge.gemspec to package and add Provides:
+    ruby-concurrent-edge
+  * Add lintian override for concurrent-ruby_ext.so not linking against libc
+
+ -- Pirate Praveen <praveen@debian.org>  Thu, 27 Feb 2020 18:33:20 +0530
+
+ruby-concurrent (1.1.6+dfsg-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Michael Moll ]
+  * New upstream version 1.1.6
+
+  [ Pirate Praveen ]
+  * Bump Standards-Version to 4.5.0 (no changes needed)
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 25 Feb 2020 18:23:57 +0530
+
+ruby-concurrent (1.0.5-4) unstable; urgency=medium
+
+  * Team Upload
+
+  [ Utkarsh Gupta ]
+  * Add salsa-ci.yml
+
+  [ Pirate Praveen ]
+  * Bump Standards-Version to 4.4.1 (no changes needed)
+  * Drop compat file, rely on debhelper-compat and bump compat level to 12
+  * Drop unnecessary dependency on ruby (see #934948)
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 24 Dec 2019 22:07:01 +0530
+
+ruby-concurrent (1.0.5-3) unstable; urgency=medium
+
+  * Team upload.
+  * debian/control: drop `Testsuite: autopkgtest-pkg-ruby` to let autopkgtest
+    run only the explicit debian/tests/control in this package, and not also
+    run the default test produced by autodep8 (Closes: #926782)
+
+ -- Antonio Terceiro <terceiro@debian.org>  Mon, 15 Apr 2019 12:52:29 -0300
+
+ruby-concurrent (1.0.5-2) unstable; urgency=medium
+
+  * Team upload
+  * Fix map_spec.rb test on armhf
+  * Move packaging repository to Salsa
+
+ -- Balint Reczey <rbalint@ubuntu.com>  Mon, 27 Aug 2018 23:08:36 +0200
+
+ruby-concurrent (1.0.5-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release 
+
+ -- Pirate Praveen <praveen@debian.org>  Mon, 14 Aug 2017 15:42:48 +0530
+
+ruby-concurrent (1.0.0-3) unstable; urgency=medium
+
+  * Team upload
+  * Add DH_RUBY_GEMSPEC in debian/tests/control (fix autopkgtest failure)
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 13 Sep 2016 20:04:25 +0530
+
+ruby-concurrent (1.0.0-2) unstable; urgency=medium
+
+  * Specify seed value for running tests (Closes: #836536)
+  * Bump Standards Version to 3.9.8 (No changes)
+
+ -- Balasankar C <balasankarc@autistici.org>  Mon, 12 Sep 2016 10:52:06 +0530
+
+ruby-concurrent (1.0.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #809338)
+
+ -- Balasankar C <balasankarc@autistici.org>  Tue, 08 Dec 2015 16:27:18 +0530

@@ -1,0 +1,12 @@
+concurrent-ruby-edge is part of the source
+
+--- a/spec/spec_helper.rb
++++ b/spec/spec_helper.rb
+@@ -34,6 +34,7 @@
+ end
+ 
+ require 'concurrent'
++$:.unshift File.expand_path('../../lib/concurrent-ruby-edge', __FILE__)
+ require 'concurrent-edge'
+ 
+ Concurrent.use_simple_logger Logger::FATAL

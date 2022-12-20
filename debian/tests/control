@@ -1,0 +1,5 @@
+Test-Command: ruby -e "gem 'concurrent-ruby'" \
+ && ruby -e "gem 'concurrent-ruby-ext'" \
+ && ruby -e "gem 'concurrent-ruby-edge'" \
+ && DH_RUBY_GEMSPEC=concurrent-ruby.gemspec gem2deb-test-runner --autopkgtest 2>&1
+Depends: @, @builddeps@, gem2deb-test-runner
